@@ -1,7 +1,7 @@
 import numpy as np
 
 a = np.arange(729).reshape(9,9,9)
-aux = np.arange(729).reshape(9,9,9)
+
 num1 = int(input("Digite el bloque 1: "))
 num2 = int(input("Digite el bloque 2: "))
 print(a)
@@ -37,6 +37,7 @@ def obtenerBloque(a,num):
 def intercambiar(num1, num2):
     i,e = obtenerBloque(a, num1)
     f,k = obtenerBloque(a, num2)
+    aux = np.arange(729).reshape(9,9,9)
     m,n = obtenerBloque(aux, num2)
     num1 = obtenerNum(num1)
     num2 = obtenerNum(num2)
