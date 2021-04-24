@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Consultas</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estilos.css') }}">
+    </head>
+    <body>
+        <center>
+            <form method="POST">
+                <h1>Consultas</h1>
+                <p>Seleccione una consulta a realizar:</p>
+                <input type="radio" id="c1" name="question" value="c1">
+                <label for="c1">Cantidad de vacunas por laboratorio</label>
+                <br>
+                <input type="radio" id="c2" name="question" value="c2">
+                <label for="c2">Cual es el máximo(cantidad) de vacunas aplicadas en una tanda por territorio</label>
+                <br>
+                <input type="radio" id="c3" name="question" value="c3">
+                <label for="c3">Total de vacunas aplicadas por terrotorio</label>
+                <br>
+                <input type="radio" id="c4" name="question" value="c4">
+                <label for="c4">Promedio de vacunas dadas por territorios</label>
+                <br>
+                <input type="radio" id="c5" name="question" value="c5">
+                <label for="c5">Promedio de vacunas dadas por laboratorio</label>
+                <br>
+                <input type="radio" id="c6" name="question" value="c6">
+                <label for="c6">Maximo de vacunas dada por un laboratorio en una tanda</label>
+                <br>
+                <input type="radio" id="c7" name="question" value="c7">
+                <label for="c7">A que territorio  se le han aplicado mas vacunas</label>
+                <br>
+                <input type="radio" id="c8" name="question" value="c8">
+                <label for="c8">Cantidad segun el uso</label>
+                <br>
+                <input type="radio" id="c9" name="question" value="c9">
+                <label for="c9">Total de vacunas aplicadas</label>
+                <br>
+                <input type="radio" id="c10" name="question" value="c10">
+                <label for="c10">Cuantas veces se uso cada labratorio por territorio</label>
+                <br>
+                <input type="radio" id="c11" name="question" value="c11">
+                <label for="c11">Cantidad de vacunas segun fecha de resolucion</label>
+                <br><br>
+                <input type="submit" value="Enviar">
+            </form>
+            <br><br><br>
+            <table>
+                <caption><h1>Asignación de dosis de vacuna contra COVID-19</h1></caption>
+                {% for table in tables %}
+                    {{ table|safe }}
+                {% endfor %}
+            </table>   
+        </center>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>COVID-19</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estilos.css') }}">
+    </head>
+    <body>
+        <center>
+            <table>
+                <caption><h1>Asignación de dosis de vacuna contra COVID-19</h1></caption>
+                {% for table in tables %}
+                    {{ table|safe }}
+                {% endfor %}
+            </table>
+            <br><br>
+            <a class="boton" href="{{ url_for('consultar') }}">Realizar una consulta</a><br><br>
+        </center>
+    </body>
+</html>
