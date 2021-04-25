@@ -1,12 +1,3 @@
-"""
-
-Integrantes:
-Diego Alonso Galeano Herrera - 20172020074
-Oscar David Rubiano Diaz - 20201020083
-Diego Alejandro Bautista Castañeda - 20192020139
-
-"""
-
 import pandas as pd
  
 data = pd.read_csv('C:\\Users\\diego\\Documents\\B45C4R0\\Python\\C.DATOS\\phone_data.csv', index_col='index')
