@@ -20,6 +20,7 @@ class producto(db.Model):
 
 @app.route("/")
 def principal():
+    print(producto.query.all())
     return render_template("index.html", productos = producto.query.all())
 
 #Agregar un producto 
