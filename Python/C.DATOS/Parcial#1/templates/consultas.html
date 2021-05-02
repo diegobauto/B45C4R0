@@ -9,48 +9,79 @@
             <form method="POST">
                 <h1>Consultas</h1>
                 <p>Seleccione una consulta a realizar:</p>
-                <input type="radio" id="c1" name="question" value="c1">
-                <label for="c1">Cantidad de vacunas por laboratorio</label>
-                <br>
-                <input type="radio" id="c2" name="question" value="c2">
-                <label for="c2">Cual es el máximo(cantidad) de vacunas aplicadas en una tanda por territorio</label>
-                <br>
-                <input type="radio" id="c3" name="question" value="c3">
-                <label for="c3">Total de vacunas aplicadas por terrotorio</label>
-                <br>
-                <input type="radio" id="c4" name="question" value="c4">
-                <label for="c4">Promedio de vacunas dadas por territorios</label>
-                <br>
-                <input type="radio" id="c5" name="question" value="c5">
-                <label for="c5">Promedio de vacunas dadas por laboratorio</label>
-                <br>
-                <input type="radio" id="c6" name="question" value="c6">
-                <label for="c6">Maximo de vacunas dada por un laboratorio en una tanda</label>
-                <br>
-                <input type="radio" id="c7" name="question" value="c7">
-                <label for="c7">A que territorio  se le han aplicado mas vacunas</label>
-                <br>
-                <input type="radio" id="c8" name="question" value="c8">
-                <label for="c8">Cantidad segun el uso</label>
-                <br>
-                <input type="radio" id="c9" name="question" value="c9">
-                <label for="c9">Total de vacunas aplicadas</label>
-                <br>
-                <input type="radio" id="c10" name="question" value="c10">
-                <label for="c10">Cuantas veces se uso cada labratorio por territorio</label>
-                <br>
-                <input type="radio" id="c11" name="question" value="c11">
-                <label for="c11">Cantidad de vacunas segun fecha de resolucion</label>
-                <br><br>
+                <input type="radio" name="question" value="c1">
+                <label>Cantidad de vacunas por laboratorio</label><br>
+                
+                <input type="radio" name="question" value="c1_1">
+                <label>Seleccione el laboratorio a consultar: </label>
+                <select name="select">
+                    <option value="PFIZER">PFIZER</option>
+                    <option value="SINOVAC">SINOVAC</option>
+                </select><br>
+
+                <input type="radio" name="question" value="c2">
+                <label>Cual es el máximo(cantidad) de vacunas aplicadas en una tanda por territorio</label><br>
+                
+                <input type="radio" name="question" value="c2_2">
+                <label>Buscar por Territorio:</label>
+                <input type="text" name="territorium" placeholder="Territorio"><br>
+
+                <input type="radio" name="question" value="c3">
+                <label>Total de vacunas aplicadas por terrotorio</label><br>
+                
+                <input type="radio" name="question" value="c4">
+                <label>Promedio de vacunas dadas por territorios</label><br>
+                
+                <input type="radio" name="question" value="c5">
+                <label>Promedio de vacunas dadas por laboratorio</label><br>
+                
+                <input type="radio" name="question" value="c6">
+                <label>Maximo de vacunas dada por un laboratorio en una tanda</label><br>
+
+                <input type="radio" name="question" value="c8_8">
+                <textarea name="textarea" rows="2" cols="50" placeholder="Escriba la descripción"></textarea><br>
+                
+                <input type="radio" name="question" value="c7">
+                <label>A que territorio  se le han aplicado mas vacunas</label><br>
+                
+                <input type="radio" name="question" value="c8">
+                <label>Cantidad segun el uso</label><br>
+                
+                <input type="radio" name="question" value="c9">
+                <label>Total de vacunas aplicadas</label><br>
+                
+                <input type="radio" name="question" value="c10">
+                <label>Cuantas veces se uso cada laboratorio por territorio</label><br>
+                
+                <input type="radio" name="question" value="c11">
+                <label>Cantidad de vacunas segun fecha de resolucion</label><br>
+
+                <input type="radio" name="question" value="c11_11">
+                <label>Seleccione una fecha a buscar: </label>
+                <input type="date" name="fecha" value="2021-02-16" min="2021-02-01" max="2021-05-31"><br>
+
+                <input type="radio" name="question" value="c12">
+                <label>Seleccione las columnas que desea visualizar:</label><br>
+                <input type="checkbox" name="columna" value="num_resolucion">Num de resolucion
+                <input type="checkbox" name="columna" value="fecha_resolucion">Fecha de resolucion
+                <input type="checkbox" name="columna" value="año">Año
+                <input type="checkbox" name="columna" value="cod_territorio">Cod de territorio
+                <input type="checkbox" name="columna" value="nom_territorio">Nombre de territorio<br>
+                <input type="checkbox" name="columna" value="laboratorio_vacuna">Laboratorio
+                <input type="checkbox" name="columna" value="cantidad">Cantidad
+                <input type="checkbox" name="columna" value="uso_vacuna">Uso de vacuna
+                <input type="checkbox" name="columna" value="fecha_corte">Fecha de corte<br><br>
+                
                 <input type="submit" value="Enviar">
             </form>
             <br><br><br>
             <table>
                 <caption><h1>Asignación de dosis de vacuna contra COVID-19</h1></caption>
-                {% for table in tables %}
-                    {{ table|safe }}
+                {% for i in data %}
+                    {{ i|safe }}
                 {% endfor %}
-            </table>   
+            </table> <br><br>
+            <a class="boton" href="{{ url_for('principal') }}">Inicio</a><br><br>
         </center>
     </body>
 </html>

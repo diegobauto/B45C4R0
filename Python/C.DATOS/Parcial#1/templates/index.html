@@ -8,8 +8,8 @@
         <center>
             <table>
                 <caption><h1>Asignación de dosis de vacuna contra COVID-19</h1></caption>
-                {% for table in tables %}
-                    {{ table|safe }}
+                {% for i in data %}
+                    {{ i|safe }}
                 {% endfor %}
             </table>
             <br><br>

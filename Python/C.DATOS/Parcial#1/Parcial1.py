@@ -19,37 +19,55 @@ data = data.fillna(value=0)
 
 @app.route('/')
 def principal():
-    return render_template('index.html',  tables=[data.to_html()])
+    return render_template('index.html',  data=[data.to_html()])
 
 @app.route('/consultar', methods=("POST", "GET"))
 def consultar():
     info = pd.DataFrame
     if request.method == "POST":
-        if request.form["question"] == "c1":
+        respuesta = request.form["question"]
+        print(respuesta)
+        if respuesta == "c1":
             info = (data.groupby('laboratorio_vacuna')['cantidad'].sum()).to_frame().to_html()
-        if request.form["question"] == "c2":
+        if respuesta == "c2":
             info = (data.groupby('nom_territorio')['cantidad'].max()).to_frame().to_html()
-        if request.form["question"] == "c3":
+        if respuesta == "c3":
             info = (data.groupby('nom_territorio')['cantidad'].sum()).to_frame().to_html()
-        if request.form["question"] == "c4":
+        if respuesta == "c4":
             info = (data.groupby(data['nom_territorio'])['cantidad'].mean()).to_frame().to_html()
-        if request.form["question"] == "c5":
+        if respuesta == "c5":
             info = (data.groupby(data['laboratorio_vacuna'])['cantidad'].mean()).to_frame().to_html()
-        if request.form["question"] == "c6":
+        if respuesta == "c6":
             info = (data.groupby('laboratorio_vacuna')['cantidad'].max()).to_frame().to_html()
-        if request.form["question"] == "c7":
+        if respuesta == "c7":
             info = (data[data['cantidad']==data['cantidad'].max()]).to_html()
-        if request.form["question"] == "c8":
+        if respuesta == "c8":
             info = (data.groupby('uso_vacuna')['cantidad'].sum()).to_frame().to_html()
-        if request.form["question"] == "c9":
+        if respuesta == "c9":
             tot=data['cantidad'].sum()
             d={'Total':['Total'],'Valor':[tot]}
             info = (pd.DataFrame(d)).to_html()
-        if request.form["question"] == "c10":
+        if respuesta == "c10":
             info = (data.groupby(['nom_territorio', 'laboratorio_vacuna'])['cantidad'].count()).to_frame().to_html()
-        if request.form["question"] == "c11":
+        if respuesta == "c11":
             info = (data.groupby('fecha_resolucion')['cantidad'].sum()).to_frame().to_html()
-    return render_template('consultas.html', tables=[info])
+        if respuesta == "c1_1":
+            select = request.form.get('select')
+            info = (data[data['laboratorio_vacuna']==select]).to_html()
+        if respuesta == "c2_2":
+            select = request.form.get('territorium')
+            info = (data[data['nom_territorio']==select]).to_html()
+        if respuesta == "c12":
+            lista = request.form.getlist('columna')
+            print(lista)
+            info = data[lista].to_html()
+        if respuesta == "c11_11":
+            fecha = request.form.get('fecha')
+            info = (data[data['fecha_resolucion']==fecha]).to_html()
+        if respuesta == "c8_8":
+            area = request.form.get('textarea')
+            info = (data[data['uso_vacuna']==area]).to_html()
+    return render_template('consultas.html', data=[info])
 
 if __name__ == '__main__':
     app.run(debug=True)
