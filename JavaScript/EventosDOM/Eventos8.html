@@ -1,4 +1,4 @@
-<!-- Método addEventListener -->
+<!-- Funcion flecha en addEventListener -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,18 +9,14 @@
     Nombre: <input type="text" id="nombre">
     <script>
         //Quitamos el on
-        document.getElementById("nombre").addEventListener("focus", cambiar);
-        document.getElementById("nombre").addEventListener("blur", regresar);
-        function cambiar(evento) {
-            //El evento es focus y target es el elemento, en este caso noombre
+        document.getElementById("nombre").addEventListener("focus", (evento) => {
             let componente = evento.target;
-            componente.style.background = "red";
-        }
+            componente.style.background = "pink";
+        });
 
-        function regresar(evento) {
-            evento.target.style.background = "green";
-        }
-
+        document.getElementById("nombre").addEventListener("blur", evento => {
+            evento.target.style.background = "gray";
+        });
     </script>
 </body>
 </html>

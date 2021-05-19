@@ -1,22 +1,25 @@
-<!-- Funcion flecha en addEventListener -->
+<!-- Formulario Evento 
+Delegación de evento o useCapture-->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-    Nombre: <input type="text" id="nombre">
-    <script>
-        //Quitamos el on
-        document.getElementById("nombre").addEventListener("focus", (evento) => {
-            let componente = evento.target;
-            componente.style.background = "pink";
-        });
+    <head>
+        <meta charset="UTF-8">
+        <title>Formulario</title>
+    </head>
+    <body>
+        <form id="form">
+            Nombre: <input type="text" id="nombre">
+            Apellido: <input type="text" id="apellido">
+        </form>
+        <script>
+            const formulario = document.getElementById("form");
+            form.addEventListener("focus", (evento) => {
+                evento.target.style.background = "pink";
+            }, true);
 
-        document.getElementById("nombre").addEventListener("blur", evento => {
-            evento.target.style.background = "gray";
-        });
-    </script>
-</body>
+            form.addEventListener("blur", (evento) => {
+                evento.target.style.background = "gray";
+            }, true);
+        </script>
+    </body>
 </html>

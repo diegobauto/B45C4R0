@@ -1,16 +1,18 @@
-<!-- Eventos en el DOM con onclick()-->
+<!-- Asociar eventos a elementos -->
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Eventos en el DOM</title>
+        <title>Asociar eventos a elementos</title>
     </head>
 
     <body>
-        <h1 onclick="cambiarTexto(this)">Eventos en el DOM</h1>
+        <h1 id="titulo">Asociar Eventos</h1>
         <script>
-            function cambiarTexto(titulo) {
-                titulo.innerHTML='Nuevo Titulo';
+            let titulo = document.getElementById("titulo");
+            titulo.onclick = cambiarTexto;
+            function cambiarTexto() {
+                titulo.innerHTML = "NUEVO TÍTULO";
             }
         </script>
     </body>

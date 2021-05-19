@@ -1,23 +1,26 @@
-<!-- Eventos en el DOM con onchange() 
-Normalmente se utiliza para:
-Modificar los valores de un campo de texto o los elementos de un formulario -->
+<!-- Eventos onmouseover y onmouseout 
+onmouseover es para cuando nos paremos encima con el cursor, realiza una acción
+onmouseout para cuando quitenos el cursor de encima-->
+
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>onchange()</title>
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onmouseover y onmouseout</title>
+</head>
+<body>
+    
+    <h1 onmouseover="cambiarOver(this)" onmouseout="cambiarOut(this)">Onmouseover & Onmouseout</h1>
+    <script>
+        function cambiarOver(cambiar) {
+            cambiar.style.color = "red";  
+        }
 
-    <body>
-        <h1>onchange()</h1>
+        function cambiarOut(cambiar) {
+            cambiar.style.color = "green";  
+        }
 
-        <label for="">Nombre</label>
-        <input type="text" onchange="cambiar(this)">
-
-        <script>
-            function cambiar(nombre) {
-                nombre.value = nombre.value.toUpperCase();
-            }
-        </script>
-    </body>
+    </script>
+    
+</body>
 </html>

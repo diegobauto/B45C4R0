@@ -1,28 +1,22 @@
-<!-- Eventos en el DOM con onload()
-Se ejecuta cuando se carga nuestra pagina web, podemos realizar cualquier acción
-Por ejemplo si tiene habilitadas las cookies -->
+<!-- Eventos en el DOM con onchange() 
+Normalmente se utiliza para:
+Modificar los valores de un campo de texto o los elementos de un formulario -->
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Eventos en el DOM</title>
+        <title>onchange()</title>
     </head>
 
-    <body onload="entrar()">
-        <h1>Eventos en el DOM</h1>
-        <div id="mostrar"></div>
+    <body>
+        <h1>onchange()</h1>
+
+        <label for="">Nombre</label>
+        <input type="text" onchange="cambiar(this)">
 
         <script>
-            function entrar() {
-                alert("Entrando a la pagina web");
-                let texto = "";
-                if(navigator.cookieEnabled){
-                    texto = "Cookies Habilitadas";
-                }
-                else{
-                    texto = "Cookies Inhabilitadas";
-                }
-                document.getElementById("mostrar").innerHTML = texto;
+            function cambiar(nombre) {
+                nombre.value = nombre.value.toUpperCase();
             }
         </script>
     </body>

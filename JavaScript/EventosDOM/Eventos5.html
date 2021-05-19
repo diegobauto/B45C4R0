@@ -1,6 +1,7 @@
-<!-- Eventos onmouseover y onmouseout 
-onmouseover es para cuando nos paremos encima con el cursor, realiza una acción
-onmouseout para cuando quitenos el cursor de encima-->
+<!-- Eventos onmousedown y onmouseup y onclick
+onmousedown es para cuando presiono un click encima del texto, realiza una acción
+onmouseup es cuando ya suelto el click, realiza una acción
+-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,16 +11,15 @@ onmouseout para cuando quitenos el cursor de encima-->
 </head>
 <body>
     
-    <h1 onmouseover="cambiarOver(this)" onmouseout="cambiarOut(this)">Onmouseover & Onmouseout</h1>
+    <h1 onmousedown="cambiarDown(this)" onmouseup="cambiarUp(this)">Onmouseover & Onmouseout</h1>
     <script>
-        function cambiarOver(cambiar) {
+        function cambiarDown(cambiar) {
             cambiar.style.color = "red";  
         }
 
-        function cambiarOut(cambiar) {
+        function cambiarUp(cambiar) {
             cambiar.style.color = "green";  
         }
-
     </script>
     
 </body>

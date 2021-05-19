@@ -1,18 +1,28 @@
-<!-- Asociar eventos a elementos -->
+<!-- Eventos en el DOM con onload()
+Se ejecuta cuando se carga nuestra pagina web, podemos realizar cualquier acción
+Por ejemplo si tiene habilitadas las cookies -->
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Asociar eventos a elementos</title>
+        <title>Eventos en el DOM</title>
     </head>
 
-    <body>
-        <h1 id="titulo">Asociar Eventos</h1>
+    <body onload="entrar()">
+        <h1>Eventos en el DOM</h1>
+        <div id="mostrar"></div>
+
         <script>
-            let titulo = document.getElementById("titulo");
-            titulo.onclick = cambiarTexto;
-            function cambiarTexto() {
-                titulo.innerHTML = "NUEVO TÍTULO";
+            function entrar() {
+                alert("Entrando a la pagina web");
+                let texto = "";
+                if(navigator.cookieEnabled){
+                    texto = "Cookies Habilitadas";
+                }
+                else{
+                    texto = "Cookies Inhabilitadas";
+                }
+                document.getElementById("mostrar").innerHTML = texto;
             }
         </script>
     </body>
