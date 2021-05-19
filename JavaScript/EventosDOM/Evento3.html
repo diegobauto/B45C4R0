@@ -1,0 +1,29 @@
+<!-- Eventos en el DOM con onload()
+Se ejecuta cuando se carga nuestra pagina web, podemos realizar cualquier acción
+Por ejemplo si tiene habilitadas las cookies -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Eventos en el DOM</title>
+    </head>
+
+    <body onload="entrar()">
+        <h1>Eventos en el DOM</h1>
+        <div id="mostrar"></div>
+
+        <script>
+            function entrar() {
+                alert("Entrando a la pagina web");
+                let texto = "";
+                if(navigator.cookieEnabled){
+                    texto = "Cookies Habilitadas";
+                }
+                else{
+                    texto = "Cookies Inhabilitadas";
+                }
+                document.getElementById("mostrar").innerHTML = texto;
+            }
+        </script>
+    </body>
+</html>

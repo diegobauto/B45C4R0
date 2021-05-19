@@ -1,0 +1,26 @@
+<!-- Método addEventListener -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    Nombre: <input type="text" id="nombre">
+    <script>
+        //Quitamos el on
+        document.getElementById("nombre").addEventListener("focus", cambiar);
+        document.getElementById("nombre").addEventListener("blur", regresar);
+        function cambiar(evento) {
+            //El evento es focus y target es el elemento, en este caso noombre
+            let componente = evento.target;
+            componente.style.background = "red";
+        }
+
+        function regresar(evento) {
+            evento.target.style.background = "green";
+        }
+
+    </script>
+</body>
+</html>

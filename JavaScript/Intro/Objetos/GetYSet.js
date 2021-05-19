@@ -1,6 +1,4 @@
-/*
-METODO GET Y SET
-*/
+//METODO GET Y SET
 
 let persona = {
     nombre: "Diego",

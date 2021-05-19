@@ -1,0 +1,23 @@
+<!-- Eventos en el DOM con onchange() 
+Normalmente se utiliza para:
+Modificar los valores de un campo de texto o los elementos de un formulario -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>onchange()</title>
+    </head>
+
+    <body>
+        <h1>onchange()</h1>
+
+        <label for="">Nombre</label>
+        <input type="text" onchange="cambiar(this)">
+
+        <script>
+            function cambiar(nombre) {
+                nombre.value = nombre.value.toUpperCase();
+            }
+        </script>
+    </body>
+</html>

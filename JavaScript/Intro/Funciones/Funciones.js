@@ -1,7 +1,5 @@
-/*
-La llamamos a si misma
-No la podemos reutilizar
-*/
+//La llamamos a si misma No la podemos reutilizar
+
 (function name() {
   console.log("Ejecuntando");
 })();

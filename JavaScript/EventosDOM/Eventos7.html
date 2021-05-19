@@ -1,0 +1,28 @@
+<!-- Eventos onfocus y onblur 
+onfocus es para realizar una acción cuando me paro en una caja de texto
+onblur es para realizar una acción cuando me salgo de una caja de texto
+-->
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="UTF-8">
+        <title>onfocus y onblur</title>
+    </head>
+
+    <body>
+        <h1>Onfocus & Onblur</h1>
+        
+        <input onfocus="onFocus(this)" onblur="onBlur(this)" type="text" value="Juan">
+
+        <script>
+            function onFocus(focus) {
+                focus.style.color = "red";
+                focus.style.background = 'yellow';
+            }
+            function onBlur(blur) {
+                blur.style.color = "blue";
+                blur.style.background = 'black';
+            }
+        </script>
+    </body>
+</html>

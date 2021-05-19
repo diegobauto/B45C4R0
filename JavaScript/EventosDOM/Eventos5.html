@@ -1,0 +1,26 @@
+<!-- Eventos onmouseover y onmouseout 
+onmouseover es para cuando nos paremos encima con el cursor, realiza una acción
+onmouseout para cuando quitenos el cursor de encima-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onmouseover y onmouseout</title>
+</head>
+<body>
+    
+    <h1 onmouseover="cambiarOver(this)" onmouseout="cambiarOut(this)">Onmouseover & Onmouseout</h1>
+    <script>
+        function cambiarOver(cambiar) {
+            cambiar.style.color = "red";  
+        }
+
+        function cambiarOut(cambiar) {
+            cambiar.style.color = "green";  
+        }
+
+    </script>
+    
+</body>
+</html>

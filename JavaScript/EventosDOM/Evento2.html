@@ -1,0 +1,19 @@
+<!-- Asociar eventos a elementos -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Asociar eventos a elementos</title>
+    </head>
+
+    <body>
+        <h1 id="titulo">Asociar Eventos</h1>
+        <script>
+            let titulo = document.getElementById("titulo");
+            titulo.onclick = cambiarTexto;
+            function cambiarTexto() {
+                titulo.innerHTML = "NUEVO TÍTULO";
+            }
+        </script>
+    </body>
+</html>

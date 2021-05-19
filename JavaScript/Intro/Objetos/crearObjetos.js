@@ -1,7 +1,4 @@
-/*
-CREACIÓN DE OBJETOS
-*/
-
+//CREACIÓN DE OBJETOS
 //Clase persona
 let persona = {
     nombre: "Diego",

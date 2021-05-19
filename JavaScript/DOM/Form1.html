@@ -1,0 +1,37 @@
+<!-- Acceder a los elementos de un Formulario -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+
+    <body>
+        
+        <form id="Idformulario" action="">
+            <label for="">Nombre</label>
+            <input type="text" name="nombre" id="form"><br>
+            <label for="">Apellido</label>
+            <input type="text" name="apellido" id="form">
+        </form>
+
+        <button onclick="mostrar()">MOSTRAR</button>
+
+        <div id="nombreCompleto"></div>
+
+        <script>
+            function mostrar() {
+                let formulario = document.forms["Idformulario"];
+                let texto = "";
+                for(elemento of formulario){
+                    texto += elemento.value + " ";
+                }
+                let nombreCompleto = document.getElementById("nombreCompleto");
+                nombreCompleto.innerHTML = texto;
+            }
+
+        </script>
+
+
+    </body>
+</html>

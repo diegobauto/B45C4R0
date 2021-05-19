@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html">
+    <head>
+        <meta charset="UTF-8">
+        <title>Primer archivo DOM</title>
+        <style>.azul{color: blue;}</style>
+    </head>
+
+    <body>
+        <h1 id="titulo">Saludos!</h1>
+
+        <p id="parrafo1">Nombre</p>
+        <p id="parrafo2">Apellido</p>
+
+        <h5 class="azul">AZUL #1</h5>
+        <h6 class="azul">AZUL #2</h6>
+
+        <script>
+            //Acceder a una propiedad con el id
+            let titulo = document.getElementById("titulo");
+            console.log("Valor verdadero: "+titulo.innerHTML);
+            titulo.innerHTML = "Nuevo Valor al titulo";
+
+            console.log(" ");
+
+            //Acceder a todas las propiedades de un id
+            let parrafos = document.getElementsByTagName("p");
+            console.log("No. de parrafos:"+parrafos.length);
+            for(let i=0; i<parrafos.length; i++){
+                console.log("Parrafo "+ (i+1) + " = " + parrafos[i].innerHTML);
+            }
+
+            console.log(" ");
+
+            //Acceder a todas las popiedades de una clase
+            let elementos = document.getElementsByClassName("azul");
+            for(let i=0; i<elementos.length; i++){
+                console.log((i+1) + " - " + elementos[i].innerHTML);
+            }
+
+            console.log(" ");
+
+            //Acceder a algunas de las popiedades de una clase
+            //Indicando que propiedad queremos (Ej: h6)
+            let elementos1 = document.querySelectorAll("h6.azul");
+            for(let i=0; i<elementos1.length; i++){
+                console.log((i+1) + " - " + elementos1[i].innerHTML);
+            }
+        </script>
+    </body>
+</html>

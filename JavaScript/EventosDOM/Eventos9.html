@@ -1,0 +1,22 @@
+<!-- Funcion flecha en addEventListener -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    Nombre: <input type="text" id="nombre">
+    <script>
+        //Quitamos el on
+        document.getElementById("nombre").addEventListener("focus", (evento) => {
+            let componente = evento.target;
+            componente.style.background = "pink";
+        });
+
+        document.getElementById("nombre").addEventListener("blur", evento => {
+            evento.target.style.background = "gray";
+        });
+    </script>
+</body>
+</html>

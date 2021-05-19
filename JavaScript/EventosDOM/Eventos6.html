@@ -1,0 +1,26 @@
+<!-- Eventos onmousedown y onmouseup y onclick
+onmousedown es para cuando presiono un click encima del texto, realiza una acción
+onmouseup es cuando ya suelto el click, realiza una acción
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onmouseover y onmouseout</title>
+</head>
+<body>
+    
+    <h1 onmousedown="cambiarDown(this)" onmouseup="cambiarUp(this)">Onmouseover & Onmouseout</h1>
+    <script>
+        function cambiarDown(cambiar) {
+            cambiar.style.color = "red";  
+        }
+
+        function cambiarUp(cambiar) {
+            cambiar.style.color = "green";  
+        }
+    </script>
+    
+</body>
+</html>
