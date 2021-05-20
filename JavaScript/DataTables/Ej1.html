@@ -8,7 +8,11 @@
         <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
         <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-        <script src="java.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#example').DataTable();
+            } );
+        </script>
     </head>
     <body>
         <table id="example" class="table table-striped table-bordered" style="width:100%">
@@ -143,8 +147,7 @@
                 <td>2010/03/17</td>
                 <td>$385,750</td>
             </tr>
-        </tbody>
-        
+        </tbody>   
     </table>
     </body>
 </html>
