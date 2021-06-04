@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+}
+
+.contenedor{
+    width: 80%;
+    /*height: 500px;*/
+    margin: 2% auto;
+    background-color: rgb(185, 84, 84);
+    /*Flex*/
+    display: flex;
+    flex-direction: row;/*En que direccion va a empezar invirtiendolos*/
+    flex-wrap: wrap;/*Genera una nueva linea*/
+    /*justify-content: flex-start; /*Hacia que lado van a estar los contenedores sin invertirlos*/
+    justify-content: center; /*Pone en el centro los contenedores*/
+    justify-content: space-around; /*Divide los espacios para que se acomoden acorde al ancho*/
+    /*align-items: flex-start; /*Posiciona Los elementos se vayan al final o al incio del contenedor*/
+    /*Para una sola linea*/
+    /*align-items: center; /*Poener centrado todo verticalmente*/
+    /*align-items: stretch; /*Toca quitarle el height al hijo*/
+    /*Es para varias lineas*/
+    align-content: space-around; /*Para los contenedores hijo*/
+}
+
+.hijo{
+    width: 100px;
+    height: 50px;
+    padding: 20px;
+    margin: 30px;
+    font-size: 30px;
+    text-align: center;
+    background-color: burlywood;
+    border: 2px solid black;
+
+    /*Propiedades de los contenedores hijo*/
+    /*flex-grow: 1; /*Abarcar el 100% del contenedor padre*/
+    /*flex-shrink: 1; /*Ancho minimo, toma el width*/
+    /*Resume el grow, flex, auto*/
+    flex: 1 1 auto;
+    order: 2; 
+}
+
+.order{
+    order: 1; /*Toma la prioridad de los otros elementos*/
+}

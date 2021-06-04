@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Proyectos</title>
+        <link rel="stylesheet" href="../estilos/popup.css">
+        <link rel="stylesheet" href="../estilos/perfil.css" />
+        <link rel="stylesheet" href="../estilos/proyectos.css">
+        <!-- Links para dar estilos dinamicos -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>-->
+    </head>
+
+    <body onload="cargar()">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="content">
+                <div class="logo">
+                    <a href="../index.html">Mi Portafolio</a>
+                </div>
+                <ul class="menu-list">
+                    <div class="icon cancel-btn">
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="perfil.html">Perfil</a></li>
+                    <li><a href="proyectos.html">Projects</a></li>
+                    <li>
+                        <a href="#" id="btn-abrir-popup" class="btn-abrir-popup">Contact</a>
+                    </li>
+                </ul>
+                <div class="icon menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+
+        <!--<center>
+            <div class="about">
+            </div>
+        </center>-->
+
+        <div id="tarjetas"></div>
+        
+        <!-- POPUP -->
+        <div class="overlay" id="overlay">
+            <div class="popup" id="popup">
+                <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"
+                ><i class="fas fa-times"></i
+                ></a>
+                <h3>SUSCRIBETE</h3>
+                <h4>y recibe un cupon de descuento.</h4>
+                <form action="">
+                <div class="contenedor-inputs">
+                    <input type="text" placeholder="Nombre" />
+                    <input type="email" placeholder="Correo" />
+                </div>
+                <input type="submit" class="btn-submit" value="Suscribirse" />
+                </form>
+            </div>
+        </div>
+
+        <!-- Documentos javaScript -->
+        <script src="../diseñosJS/popup.js"></script>
+        <script src="../diseñosJS/homeBar.js"></script>
+        <script src="../diseñosJS/proyectos.js"></script>
+    </body>
+</html>
