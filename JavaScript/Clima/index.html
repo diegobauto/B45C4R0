@@ -3,31 +3,40 @@
     <head>
         <meta charset="UTF-8">
         <title>Clima App</title>
-        <link rel="stylesheet" href="app.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <link rel="stylesheet" href="clima.css">
     </head>
 
-    <body>
-        <center>
-        <div style="padding-top: 30px;">
-            <div class="card">
-                <img class="card-img-top">
-                <div class="card-img-overlay">
-                    <h5 class="card-title" id="city"></h5>
-                    <p class="card-text" id="grados"></p>
-                    <p class="card-text" id="descripcion"></p>
-                    <img id="icono"><br><br><hr>
-                    <p class="card-text" id="hora"></p> <hr>
+    <body id="body">
+        <div class="card ">
+            <div class="busqueda">
+                <input type="text" placeholder="Ingrese la ciudad" id="ciudad">
+                <button class="boton" type="submit" onclick="buscar()">
+                    <ion-icon name="search-circle-outline"></ion-icon>
+                </button>
+            </div><br>
+
+            <div class="contenedor">
+                <div class="hijo box1">
+                    <img id="icono"><br>
+                    <h5 id="lugar"></h5>   
                 </div>
-                <div class="card-body">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Ingrese la ciudad" id="ciudad">
-                        <button class="btn btn-primary" type="submit" onclick="buscar()">Buscar</button>
-                    </div>
+                <div class="hijo box2">
+                    <ion-icon class="icon" name="thermometer-outline"></ion-icon>
+                    <p id="grados"></p>
+                    <p id="descripcion"></p>
                 </div>
-            </div>
+                <div class="hijo box3">
+                    <p>HORA</p><hr>
+                    <ion-icon class="icon_hora" name="time-outline"></ion-icon>
+                    <p class="card-text" id="hora"></p>
+                </div>
+            </div>          
         </div>
-        </center>
-        <script src="app.js"></script>
+
+
+        
+
+        <script src="clima.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
     </body>
 </html>

@@ -35,7 +35,7 @@
     /*Propiedades de los contenedores hijo*/
     /*flex-grow: 1; /*Abarcar el 100% del contenedor padre*/
     /*flex-shrink: 1; /*Ancho minimo, toma el width*/
-    /*Resume el grow, flex, auto*/
+    /*Resume el grow, flex, shrink*/
     flex: 1 1 auto;
     order: 2; 
 }

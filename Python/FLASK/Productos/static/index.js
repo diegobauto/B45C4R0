@@ -29,6 +29,4 @@ fetch(url)
     else{
         alert("no hay nada");
     }
-    
-    
 })
