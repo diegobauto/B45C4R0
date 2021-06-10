@@ -2,6 +2,7 @@ from vector import vector
 import random
 import math
 
+
 """Este procedimiento permite imprimir vectores en la consola"""
 def imprimeVector(vector, mensaje="vector sin nombre: \t"):
         print("\n", mensaje, end="        ")
@@ -46,8 +47,8 @@ def solucion():
             """Se realiza la suma de la variable 's'
             con el dato en la posición j"""
             # Asigne a la variable 's' la suma de 's' con el dato en la posición j
-            s += vec_mod18.V[j]
-            #s = s + vec_mod18[j]
+            #s = s + j #0 1 2 3 4 5 6
+            s = s + vec_mod18.V[j]
         """Se almacena el total de la suma en la posición i"""
         vec_mod18.V[i] = s
     """Se retornan los objetos requeridos para efectuar la
