@@ -1,55 +1,38 @@
-import tkinter
+from tkinter import *
 
-abecedario = "abcdefghijklmnñopqrstuvwxyz"
-
-
-def obtenerTextoBoton(lista,indice):
-    print(lista[indice].config("text")[-1])
+def letter(letra):
+    return letra
 
 def InitWindow():
-    window = tkinter.Tk()
-    window.maxsize(900,600)
-    window.minsize(900,600)
-
-    row = 0
-    column = 0
-    lista = []
-    for i in abecedario: 
-        lista.append(tkinter.Button(window, text=i, width=5, height=3))
+    window = Tk()
+    window.title("Ahorcado")
+    window.maxsize(865,600)
+    window.minsize(865,600)
+    a = Button(window, text="a", width=5, height=3, command=lambda: letter("a")).place(x=200,y=400)
+    b = Button(window, text="b", width=5, height=3, command=lambda: letter("b")).place(x=250,y=400)
+    c = Button(window, text="c", width=5, height=3, command=lambda: letter("c")).place(x=300,y=400)
+    d = Button(window, text="d", width=5, height=3, command=lambda: letter("d")).place(x=350,y=400)
+    e = Button(window, text="e", width=5, height=3, command=lambda: letter("e")).place(x=400,y=400)
+    f = Button(window, text="f", width=5, height=3, command=lambda: letter("f")).place(x=450,y=400)
+    g = Button(window, text="g", width=5, height=3, command=lambda: letter("g")).place(x=500,y=400)
+    h = Button(window, text="h", width=5, height=3, command=lambda: letter("h")).place(x=550,y=400)
+    i = Button(window, text="i", width=5, height=3, command=lambda: letter("i")).place(x=600,y=400)
+    j = Button(window, text="j", width=5, height=3, command=lambda: letter("j")).place(x=200,y=460)
+    k = Button(window, text="k", width=5, height=3, command=lambda: letter("k")).place(x=250,y=460)
+    l = Button(window, text="l", width=5, height=3, command=lambda: letter("l")).place(x=300,y=460)
+    m = Button(window, text="m", width=5, height=3, command=lambda: letter("m")).place(x=350,y=460)
+    n = Button(window, text="n", width=5, height=3, command=lambda: letter("n")).place(x=400,y=460)
+    ñ = Button(window, text="ñ", width=5, height=3, command=lambda: letter("ñ")).place(x=450,y=460)
+    o = Button(window, text="o", width=5, height=3, command=lambda: letter("o")).place(x=500,y=460)
+    p = Button(window, text="p", width=5, height=3, command=lambda: letter("p")).place(x=550,y=460)
+    q = Button(window, text="q", width=5, height=3, command=lambda: letter("q")).place(x=600,y=460)
+    r = Button(window, text="r", width=5, height=3, command=lambda: letter("r")).place(x=200,y=520)
+    s = Button(window, text="s", width=5, height=3, command=lambda: letter("s")).place(x=250,y=520)
+    t = Button(window, text="t", width=5, height=3, command=lambda: letter("t")).place(x=300,y=520)
+    u = Button(window, text="u", width=5, height=3, command=lambda: letter("u")).place(x=350,y=520)
+    v = Button(window, text="v", width=5, height=3, command=lambda: letter("v")).place(x=400,y=520)
+    w = Button(window, text="w", width=5, height=3, command=lambda: letter("w")).place(x=450,y=520)
+    x = Button(window, text="x", width=5, height=3, command=lambda: letter("x")).place(x=500,y=520)
+    y = Button(window, text="y", width=5, height=3, command=lambda: letter("y")).place(x=550,y=520)
+    z = Button(window, text="z", width=5, height=3, command=lambda: letter("z")).place(x=600,y=520)  
     
-    for j in range(27):
-        print(lista[j].config("text")[-1])
-        column += 1
-        lista[j].grid(row = row, column = column)
-    lista[j].config(command=lambda:print(j))
-    #print(lista[1].grid(row = row, column = column))
-    #print(lista[1].config(command=lambda:print(lista[1].config("text"))))
-    
-    """
-    for j in range(27):
-        for i in abecedario:
-            boton = tkinter.Button(window, text=i, width=5, height=3, command=lambda: print(boton[j].config("text")[-1]))
-            if column%9 == 0:
-                row += 1
-                column = 0
-                boton.grid(row = row, column = column)
-            else:
-                boton.grid(row = row, column = column)
-            column += 1
-    """
-
-    """
-    btnlista = []
-   
-    for i in range(3):
-        btnlista.append([])
-        for j in range(9):
-            btnlista[i].append(tkinter.Button(window))
-            btnlista[i][j].config(bg="white", borderwidth=1, activebackground = "black", relief = "solid")
-            btnlista[i][j].place(relx=0.1 + 0.1*j, rely=0.1 + 0.1*i, relwidth = 0.1, relheight=0.1)
-            for x in range(27):
-                btnlista[i][j].config(text = abecedario[x])
-    """
-    
-    window.mainloop()
-    window.pack()

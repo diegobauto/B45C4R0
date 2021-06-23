@@ -25,9 +25,9 @@ def separate(word):
   print(*line)
   return final,line
 
-def guessWord(final,line):
+def guessWord(final,line, letra):
   for i in range(10):
-    char = input("Digite una letra: ").upper()
+    char = letra.upper()
     if (char in final):
       for j in final:
         if j == char:
