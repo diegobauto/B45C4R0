@@ -1,0 +1,11 @@
+Una llave foranea lo que nos permite es interactuar entre tablas, tener 
+una relacuón entre ellas
+
+**** Por ejemplo: ***
+Una tabla HIJO, y una tabla PADRE
+
+Por lo tanto pondriamos un campo('ID' o 'cualquier otro nombre') 
+tanto en PADRE como en HIJO para saber que hijo le corresponde a cada padre
+
+- Puede ser un hijo a un padre (UNO A UNO)
+- Muchos hijos a un padre (MUCHOS A UNO)
