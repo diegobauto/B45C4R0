@@ -42,9 +42,9 @@ def solucion():
     lista = sorted(lista, key=lambda x:x[1])
 
     date_lowest_mean = lista[0][0]
-    lowest_mean = float(lista[0][1])
+    lowest_mean = lista[0][1]
     date_highest_mean = lista[-1][0]
-    highest_mean = float(lista[-1][1])
+    highest_mean = lista[-1][1]
 
     createFile()
 
