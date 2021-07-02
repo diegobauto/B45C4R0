@@ -11,6 +11,10 @@ Usage:
 Basic Echobot example, repeats messages.
 Press Ctrl-C on the command line or send a signal to the process to stop the
 bot.
+
+SE TUVO QUE INSTALAR:
+------- pip install python-telegram-bot -------
+PARA EL DEBIDO DESARROLLO
 """
 
 import logging
@@ -49,8 +53,12 @@ def saludar(update: Update, context: CallbackContext) -> None:
     update.message.reply_text("ESTE ES UN SALUDO DE ASCARD")
 
 def imagen(update: Update, context: CallbackContext) -> None:
-    update.message.reply_text('Has enviado una imagen, por que?!')
+    """Este es un callback que cuando enviamos una imagen nos reponde que es una imagen"""
+    update.message.reply_text('Has enviado una IMAGEN')
 
+def video(update: Update, context: CallbackContext) -> None:
+    """Este es un callback que cuando enviamos uno video nos reponde que es una video"""
+    update.message.reply_text('Has enviado un VIDEO')
 
 def main() -> None:
     """Start the bot."""
@@ -70,7 +78,12 @@ def main() -> None:
 
     #Estamos diciendo que cuando se envie una foto al bot, este responde con algo
     #llamando a la funcion imagen()
+    #SI ES UNA FOTO Y NO ES UN COMANDO ENTONCES:
     dispatcher.add_handler(MessageHandler(Filters.photo & ~Filters.command, imagen))
+
+    #Estamos diciendo que cuando se envie un video al bot, este responde con algo
+    #llamando a la funcion video()
+    dispatcher.add_handler(MessageHandler(Filters.video & ~Filters.command, video))
     
     # Start the Bot
     updater.start_polling()
@@ -78,6 +91,9 @@ def main() -> None:
     # Run the bot until you press Ctrl-C or the process receives SIGINT,
     # SIGTERM or SIGABRT. This should be used most of the time, since
     # start_polling() is non-blocking and will stop the bot gracefully.
+    """
+    POLLING: Lo que hace todo el tiempo es estar preguntando al servidor si lleva un mensaje
+    """
     updater.idle()
 
 
