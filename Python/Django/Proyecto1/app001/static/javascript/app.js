@@ -1,0 +1,1 @@
+alert("CARGAR JS EN DJANGO")
