@@ -1,5 +1,4 @@
 class Temperature:
-    
     def __init__(self, temperature = 75.0):
         self.temperature = temperature
         
@@ -18,8 +17,8 @@ class Temperature:
     def convertToKelvin(self):
         pass
 
+
 class Kelvin(Temperature): 
-    
     def convertToFahren(self):
         temp = (9/5)*self.temperature - 459.67
         return temp       
@@ -40,8 +39,8 @@ class Kelvin(Temperature):
     def __str__(self):
         return str(self.temperature) + " degrees Kelvin"
         
+
 class Celcius(Temperature): 
-    
     def convertToFahren(self):
         return (9/5)*self.temperature - 32
            
@@ -61,8 +60,8 @@ class Celcius(Temperature):
     def __str__(self):
         return str(self.temperature) + " degrees Celcius"
         
+
 class Fahrenheit(Temperature): 
-    
     def convertToFahren(self):
         return self.temperature
         

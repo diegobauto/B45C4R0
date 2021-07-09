@@ -2,7 +2,7 @@ SLOW = 1
 MEDIUM = 2
 FAST = 3
 
-class Fan():
+class Ventilador():
     
     # Constructor
     def __init__(self, speed = SLOW, radius = 5, color = "blue", on = False):
@@ -49,8 +49,8 @@ class Fan():
         
     
 # Usando objetos
-ventilador1 = Fan(FAST, 10, "yellow", True)
-ventilador2 = Fan(MEDIUM) # ventilador2 = Fan(MEDIUM, 5, "blue", False)
+ventilador1 = Ventilador(FAST, 10, "yellow", True)
+ventilador2 = Ventilador(MEDIUM) # ventilador2 = Fan(MEDIUM, 5, "blue", False)
 
 print("Informacion del ventilador 1")
 print("-Estado:",ventilador1.isON())    
