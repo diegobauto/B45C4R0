@@ -35,4 +35,3 @@ def InitWindow():
     x = Button(window, text="x", width=5, height=3, command=lambda: letter("x")).place(x=500,y=520)
     y = Button(window, text="y", width=5, height=3, command=lambda: letter("y")).place(x=550,y=520)
     z = Button(window, text="z", width=5, height=3, command=lambda: letter("z")).place(x=600,y=520)  
-    
