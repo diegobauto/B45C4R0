@@ -42,4 +42,3 @@ persona1.nombre = "Juanito"
 print(persona1.nombre)
 
 #persona1.user = "USER" marcaria error si no tengo el setter de user
-

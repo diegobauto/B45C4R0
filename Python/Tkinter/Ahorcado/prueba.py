@@ -28,7 +28,10 @@ listaLineas = list("_"*len(palabra)) #Palabra a adivinar con lineas lista)
 
 
 def restarIntentos():
-    contador.set(contador.get() - 1)   # contador = contador + 1
+    contador.set(contador.get() - 1)   #contador = contador + 1
+    imagenCambia = ImageTk.PhotoImage(Image.open(f"Python\Tkinter\Ahorcado\Imagenes\{contador.get()}.jpg"))
+    panel.configure(image = imagenCambia)
+    panel.image = imagenCambia
     if (contador.get() == 0):
         MessageBox.showerror("¡GAME OVER!", "Lo sentimos, ha perdido el juego")      
         ventana.destroy()
@@ -65,7 +68,7 @@ def click(event):
 
 
 """------------------ IMAGENES ------------------ """
-imagen = ImageTk.PhotoImage(Image.open("Python\Tkinter\Ahorcado\imagen.jpg"))
+imagen = ImageTk.PhotoImage(Image.open(f"Python\Tkinter\Ahorcado\Imagenes\{10}.jpg"))
 panel = Label(frameContendor, image = imagen)
 panel.pack(side = "left", fill = "both", expand = "yes")
 
