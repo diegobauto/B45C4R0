@@ -1,13 +1,12 @@
-#from pruebas import pruebas_codigo_estudiante
 import csv
 
 data = []
 
 def createFile():
-    with open("Python\\ZZZ\\analisis_archivo.csv", "w", newline="") as File_W:
-        File_W = csv.writer(File_W, delimiter="\t")
-        File_W.writerows([["Fecha", "Concepto"]])
-        File_W.writerows(data)
+    with open("Python\\Archivos\\analisis_archivo.csv", "w", newline="") as wFile:
+        wFile = csv.writer(wFile, delimiter="\t")
+        wFile.writerows([["Fecha", "Concepto"]])
+        wFile.writerows(data)
 
 def datos(date, close):
     concepto = ""
@@ -31,7 +30,7 @@ def solucion():
     date_highest_mean = ""
     highest_mean = 0.0
     
-    with open("Python\ZZZ\GOOG.csv", newline="") as File:
+    with open("Python\\Archivos\\GOOG.csv", newline="") as File:
         reader = csv.reader(File)
         next(reader)
         for row in reader:
@@ -51,4 +50,3 @@ def solucion():
     return date_lowest_mean, lowest_mean, date_highest_mean, highest_mean
 
 solucion()
-#pruebas_codigo_estudiante(solucion)

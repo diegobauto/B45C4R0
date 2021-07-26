@@ -5,7 +5,7 @@ class Orden:
     def __init__(self, productos):
         Orden.contadorOrdenes += 1
         self._idOrden = Orden.contadorOrdenes
-        self._productos = list(productos)
+        self._productos = productos #lista de productos
 
     def agregarProducto(self, producto):
         self._productos.append(producto)
