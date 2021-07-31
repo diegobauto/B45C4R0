@@ -6,7 +6,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class Colecciones {
+public class ColeccionesMap {
     public static void HashMap(){
         Map<Integer, String> estudiantes = new HashMap<>();        
         
@@ -59,7 +59,7 @@ public class Colecciones {
     }
 
     public static void main(String[] args) {
-        Colecciones objeto = new Colecciones();
+        ColeccionesMap objeto = new ColeccionesMap();
         HashMap();
         
         //Puedo llamar a mi objeto directamente o a partir de una istancia
