@@ -12,7 +12,7 @@ try:
                 ("Luisa", "Betancour", "lbcour@email.com")
             ) #Debe ser una tupla de valores
             cursor.executemany(consulta, valores) #Para ejecutar varias consultas (many)
-            #cursor.commit() # Guarda los cambios en la base de datos, al usar with lo hace automatico
+            #conexion.commit() # Guarda los cambios en la base de datos, al usar with lo hace automatico
             registros_insertados = cursor.rowcount #Saber el numero de registros insertados
             print(f"Registros Instertados: {registros_insertados}")
 except Exception as e:
