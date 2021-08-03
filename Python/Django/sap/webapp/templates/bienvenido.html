@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+</head>
+<body>
+    <h1>Sistema de Administracion de Personas (SAP)</h1>
+    <div>
+        Número de personas: {{num_personas}}
+    </div><hr>
+    <div>
+        <table>
+            <tr >
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>APELLIDO</th>
+            <th>CORREO</th>
+            </tr>
+            {% for persona in personas %}
+                <tr>
+                <td>{{persona.id}}</td>
+                <td>{{persona.nombre}}</td>
+                <td>{{persona.apellido}}</td>
+                <td>{{persona.email}}</td>
+                </tr>
+                {% endfor %}
+        </table>
+    </div>
+    <style>
+        th, td{
+            text-align: center;
+            border: 2px solid black;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</body>
+</html>

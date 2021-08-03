@@ -1,0 +1,19 @@
+CREAR UN NUEVO PROYECTO: 
+- django-admin startproject "Nombre del proyecto"
+
+MIGRACIONES (CAMBIOS NO APLICADOS) ES PARA GUARDAR CAMBIOS:
+- python manage.py showmigrations -> Mostrar migraciones
+- python manage.py migrate 
+- python manage.py makemigrations -> Para generar los archivos que debe ejecutar en la base de datos
+
+EJECUTAR EL SERVIDOR:
+- python manage.py runserver
+
+CREAR FOLDER PARA LA APLICACIÓN:
+- python manage.py startapp "Nombre de la aplicación"
+
+PARA VER EL COMANDO SQL QUE SE CREO PARA EL MODELO DE LA APP:
+- python manage.py sqlmigrate "nombre de la app" "nombre de la migracion o como comienza"
+
+CREAR UN SUPER USUARIO:
+- python manage.py cratesuperuser

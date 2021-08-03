@@ -1,0 +1,26 @@
+Principalmente, se crea el proyecto sap (Sistema de administración de personas)
+
+Luego en el momento de crear una app en nuestro proyecto:
+Por ejemplo: 'personas' y 'webapp'
+Se hace la configuracion en "sap/settings" -> INSTALLED_APPS y se añaden
+
+Además se hace una configuracion previa en "sap/settings" y se configura la DATABASES
+para poder utilizar postgresql como defecto, comentando la parte de sqlite3 ya que no la vamos a utilizar
+
+En el momento de hacer las migraciones, automaticamente se crean tablas de postgresql
+con el prefijo de 'auth' y 'django'
+
+APPS CREADAS:
+* App webapp -> Se crean dos vistas(funciones) en "webapp/views", una de bienvenida y otra de despedida, 
+y en "sap/urls" se añaden los paths para poder utilizar y visualizar estas vistas en el servidor(web)
+* App personas -> Se crea el modelo en "personas/models" para nuestra base de datos, ademas se realiza
+el proceso(comando) para generar los archivos a ejecutar en la base de datos 
+
+Se creo un super usuario con las siguientes credenciales;
+Username = admin
+Password = 123
+email = admin@email.com
+
+Para poder ver nuestra tabla en el localhost/admin tenemos que ir a "personas/admin" y 
+registrar nuestra tabla
+Registramos la tabla de Persona y de Domicilio
