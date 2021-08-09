@@ -1,3 +1,5 @@
+#Flask nos permite crear aplicaciones web y aplicaciones de tipo REST
+
 from flask import Flask
 
 app = Flask(__name__)

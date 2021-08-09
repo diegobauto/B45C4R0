@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'estilos.css' %}">
+    <title>Actualizar Persona</title>
+</head>
+<body>
+    <div class="padre">
+        <div class="hijo">
+            <h1>ACTUALIZAR PERSONA</h1>
+            <form method="POST">
+                <table>
+                    {{formaPersona}}
+                </table>
+                <button type="submit">Enviar</button>
+                {% csrf_token %} <!--Para enviar la información -->
+            </form>
+        </div>
+    </div>
+</body>
+</html>

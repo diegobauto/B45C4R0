@@ -15,10 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from webapp import views
+from webapp.views import bienvenido, despedida
+from personas.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.bienvenido),
-    path('despedida.html', views.despedida)
+    path('', bienvenido, name="index"), #Le establecemos un nombre a esta pagina
+    path('despedida.html', despedida),
+    path('detalle_persona/<int:id>', detallePersona), 
+    path("nueva_persona", nuevaPersona),
+    path("actualizar_persona/<int:id>", actualizarPersona),
+    path("eliminar_persona/<int:id>", eliminarPersona),
 ]

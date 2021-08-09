@@ -12,24 +12,33 @@
         Número de personas: {{num_personas}}
     </div><hr>
     <div>
-        <table>
+        <table align="center">
             <tr >
-            <th>ID</th>
-            <th>NOMBRE</th>
-            <th>APELLIDO</th>
-            <th>CORREO</th>
+                <th>ID</th>
+                <th>NOMBRE</th>
+                <th>APELLIDO</th>
+                <th>CORREO</th>
+                <th colspan="3">INTERACCIÓN</th>
             </tr>
             {% for persona in personas %}
-                <tr>
+            <tr>
                 <td>{{persona.id}}</td>
                 <td>{{persona.nombre}}</td>
                 <td>{{persona.apellido}}</td>
                 <td>{{persona.email}}</td>
-                </tr>
-                {% endfor %}
+                <td><a href="detalle_persona/{{persona.id}}">Ver detalle</a></td>
+                <td><a href="actualizar_persona/{{persona.id}}">Actualizar</a></td>
+                <td><a href="eliminar_persona/{{persona.id}}">Eliminar</a></td>
+            </tr>
+            {% endfor %}
         </table>
+        <div>   <a href="nueva_persona">Agregar Persona</a></div>
     </div>
     <style>
+        table{
+            width: 80%;
+        }
+
         th, td{
             text-align: center;
             border: 2px solid black;

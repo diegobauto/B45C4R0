@@ -1,0 +1,15 @@
+.padre {
+  height:350px;
+  /*IMPORTANTE*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  
+.hijo {
+  padding: 20px;
+  background: rgb(167, 167, 167);
+  width: 500px;
+  border-radius: 15px;
+  text-align: center;
+}

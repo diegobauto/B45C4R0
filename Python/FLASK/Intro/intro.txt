@@ -1,0 +1,6 @@
+Para poder correr: flask run
+
+Para configurar en modo desarrollo:
+1. Toca decirle cual es el archivo: set FLASK_APP=app.py
+2. Ponerlo en modo desarrollo: set FLASK_ENV=development
+Se activa el debug

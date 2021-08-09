@@ -1,0 +1,32 @@
+--- Sistema de Administración de Personas ---
+
+
+HERRAMIENTAS: FLASK - SQLALCHEMY - FLASK MIGRATE - POSTRGRESQL
+
+
+****** PASOS DE INSTALACIÓN: ******
+1. Instalacion de Flask -> pip install flask
+
+2. Instalación de SQLAlchemy -> pip install flask-sqlalchemy
+SQLAlchemy es una libreria de tipo ORM, nos permite crear clases de modelo, 
+y mapear estas clases de modelo hacia la base de datos
+
+3. Instalación de flask migrate -> pip install flask-migrate
+Realiza las migraciones y poderlas ejecutar, para observar la creación de las
+tablas sobre la base de datos (alembic)
+
+4. Intalación extención postgresql -> pip install psycopg2
+
+
+****** PARA PODER HACER LAS MIGRACIONES: ******
+1. "flask db init" -> Inicializar las migraciones, se crea una carpeta de "migrations"
+2. "flask db migrate" -> para crear el archivo con la sentencia sql que se va
+a ejecutar sobre la base de datos, ubicado en versions
+3. "flask db upgrade" -> para guardar cambios en la base de datos, crea la tabla
+4. "flask db stamp head" -> Verificar que todo esta actualizado a la ultima version,
+despues volvemos al segundo paso y tercero
+- El 4 paso es el que tenemos que realizar cada vez que realicemos algun cambio en la smigraciones
+
+
+EXTENSION PARA TRABAJAR MAS FACILMENTE CON LOS FORMULARIOS:
+Instalamos "pip install flask-wtf"
