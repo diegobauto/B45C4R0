@@ -24,7 +24,8 @@ app.config["SECRET_KEY"] = "llave_secreta" #Configuracion de flask-wtf
 @app.route("/")
 def inicio():
     #Listado personas
-    personas = Persona.query.all() #Trae todas las personas de la base de datos
+    #personas = Persona.query.all() #Trae todas las personas de la base de datos
+    personas = Persona.query.order_by("id") # Traenmos todas las personas pero ordenadas por id
     total_personas = Persona.query.count() #Cuenta cuantas personas hay en la base de datos
     return render_template("index.html", personas=personas, total=total_personas)
 
@@ -34,7 +35,7 @@ def verPersona(id):
     #Recuperar persona por el id
     #persona = Persona.query.get(id)
     persona = Persona.query.get_or_404(id)#Comprobar si no encuentra id, manda a la pagina de error
-    return render_template("ver_persona.html", persona=persona)
+    return render_template("ver.html", persona=persona)
 
 
 @app.route("/agregar_persona", methods=["GET", "POST"])
@@ -48,6 +49,27 @@ def agregarPersona():
             db.session.commit() #Guardamos los cambios de la insersión
             return redirect(url_for("inicio"))
     return render_template("agregar.html", form=personaForm)
+
+
+@app.route("/actualizar_persona/<int:id>", methods=["GET", "POST"])
+def actualizarPersona(id):
+    persona = Persona.query.get_or_404(id) # Recuperar persona por id
+    personaForm = PersonaForm(obj=persona) #Le asociamos la clase de modelo al formulario html
+    if request.method == "POST":
+        if personaForm.validate_on_submit():
+            personaForm.populate_obj(persona) #Se llena el objeto persona con los valores del formulario
+            db.session.commit() #Guardamos los cambios de la insersión
+            return redirect(url_for("inicio"))
+    return render_template("actualizar.html", form=personaForm)
+
+
+@app.route("/eliminar_persona/<int:id>")
+def eliminarPersona(id):
+    persona = Persona.query.get_or_404(id) # Recuperar persona por id
+    db.session.delete(persona) #Eliminamos la persona recuperada
+    db.session.commit() #Guardamos los cambios en la base de datos
+    return redirect(url_for("inicio"))
+
 
 if __name__ == "__main__":
     app.run(debug=True)
