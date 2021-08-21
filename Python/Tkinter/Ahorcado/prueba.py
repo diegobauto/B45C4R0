@@ -3,9 +3,11 @@ from tkinter import messagebox as MessageBox
 from PIL import ImageTk, Image
 from random  import *
 
+colorbgr = "#1d2a28"
 ventana = Tk()
 ventana.title("JUEGO - AHORCADO") #ventana Principal
-frameContendor = Frame(ventana) #Frame para contener todos los elementos
+ventana.config(bg=colorbgr)
+frameContendor = Frame(ventana, bg=colorbgr) #Frame para contener todos los elementos
 
 # Variables
 filas = 0 #Controlar las filas del teclado
@@ -29,7 +31,7 @@ listaLineas = list("_"*len(palabra)) #Palabra a adivinar con lineas lista)
 
 def restarIntentos():
     contador.set(contador.get() - 1)   #contador = contador + 1
-    imagenCambia = ImageTk.PhotoImage(Image.open(f"Python\Tkinter\Ahorcado\Imagenes\{contador.get()}.jpg"))
+    imagenCambia = ImageTk.PhotoImage(Image.open(f"Python\Tkinter\Ahorcado\Imagenes\{contador.get()}.jpg").resize([500,200]))
     panel.configure(image = imagenCambia)
     panel.image = imagenCambia
     if (contador.get() == 0):
@@ -68,26 +70,26 @@ def click(event):
 
 
 """------------------ IMAGENES ------------------ """
-imagen = ImageTk.PhotoImage(Image.open(f"Python\Tkinter\Ahorcado\Imagenes\{10}.jpg"))
-panel = Label(frameContendor, image = imagen)
-panel.pack(side = "left", fill = "both", expand = "yes")
+imagen = ImageTk.PhotoImage(Image.open(f"Python\Tkinter\Ahorcado\Imagenes\{10}.jpg").resize([500,200]))
+panel = Label(frameContendor, image = imagen, bg=colorbgr)
+panel.pack(side = "top", fill = "both", expand = "yes")
 
 
 """------------------ INTENTOS ------------------ """
 frameIntentos = Frame(frameContendor)
-intentos = Label(frameIntentos, font="lucida 10 bold", text="INTENTOS:", fg="red")
-label_contador = Label(frameIntentos, font="lucida 10 bold", textvariable=contador, fg="red")
+intentos = Label(frameIntentos, font="lucida 10 bold", text="INTENTOS:", fg="red", bg=colorbgr)
+label_contador = Label(frameIntentos, font="lucida 10 bold", textvariable=contador, fg="red", bg=colorbgr)
 intentos.pack(side=LEFT)
 label_contador.pack(side=RIGHT)
 frameIntentos.pack()
 
 """------------------ AÑADIR LA PALABRA A ADIVINAR ------------------"""
-label = Label(frameContendor, text=listaLineas, font="lucida 50 bold")
-label.pack(fill = "both", expand = "yes")
+label = Label(frameContendor, text=listaLineas, font="lucida 50 bold", bg=colorbgr)
+label.pack(fill = "both", expand = "yes", )
 
 
 """------------- TECLADO ---------------"""
-frame = Frame(frameContendor, bg="gray", padx=30, pady=30) #Frame para añadir el teclado
+frame = Frame(frameContendor, bg="gray", padx=15, pady=15) #Frame para añadir el teclado
 #Ubicar los botones de a 9 por fila
 for i in botones:   
     boton = Button(frame, text=i, padx=10, pady=10, font="lucida 20 bold")
