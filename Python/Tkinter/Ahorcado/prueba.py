@@ -2,6 +2,10 @@ from tkinter import *
 from tkinter import messagebox as MessageBox
 from PIL import ImageTk, Image
 from random  import *
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+ICON_DIR = os.path.join(BASE_DIR, "Imagenes")
 
 colorbgr = "#1d2a28"
 ventana = Tk()
@@ -12,30 +16,28 @@ frameContendor = Frame(ventana, bg=colorbgr) #Frame para contener todos los elem
 # Variables
 filas = 0 #Controlar las filas del teclado
 columnas = 0 #Controlar las columnas del teclado
-normal = ["HOLA", "OSO", "AMOR", "ADIOS"]
-hard = ["DELICIOSO", "ROMANTICO", "TAMARINDO", "PROGRAMACION"]
+
+words = ["LINUX", "PYTHON", "SOFTWARE", "PROGRAMACION", "DISTRIBUCION", "LICENCIA", "COMANDOS", 
+"TERMINAL", "CODIGO", "SISTEMA", "GRUB", "KERNEL", "SEGURIDAD", "PARTICION", "INFORMATICA", "ORDENADOR"]
+
 botones = "abcdefghijklmnñopqrstuvwxyz".upper()
 #Número de intentos
 contador = IntVar()
 contador.set(10)
 
 #Menu de selección, normal o dificil, se escoge aleatorio
-option = randint(1,2)
-if option == 1:
-    palabra = choice(normal)
-elif option == 2:
-    palabra = choice(hard)
+palabra = choice(words)
 palabraAdivinar = list(palabra) #Palabra que se debe adivinar (lista)
 listaLineas = list("_"*len(palabra)) #Palabra a adivinar con lineas lista)
 
 
 def restarIntentos():
     contador.set(contador.get() - 1)   #contador = contador + 1
-    imagenCambia = ImageTk.PhotoImage(Image.open(f"Python\Tkinter\Ahorcado\Imagenes\{contador.get()}.jpg").resize([500,200]))
+    imagenCambia = ImageTk.PhotoImage(Image.open(f"{ICON_DIR}\{contador.get()}.jpg").resize([500,200]))
     panel.configure(image = imagenCambia)
     panel.image = imagenCambia
     if (contador.get() == 0):
-        MessageBox.showerror("¡GAME OVER!", "Lo sentimos, ha perdido el juego")      
+        MessageBox.showerror("¡GAME OVER!", "Ha perdido el juego")     
         ventana.destroy()
 
 
@@ -70,7 +72,7 @@ def click(event):
 
 
 """------------------ IMAGENES ------------------ """
-imagen = ImageTk.PhotoImage(Image.open(f"Python\Tkinter\Ahorcado\Imagenes\{10}.jpg").resize([500,200]))
+imagen = ImageTk.PhotoImage(Image.open(f"{ICON_DIR}\{10}.jpg").resize([500,200]))
 panel = Label(frameContendor, image = imagen, bg=colorbgr)
 panel.pack(side = "top", fill = "both", expand = "yes")
 
@@ -100,7 +102,6 @@ for i in botones:
         filas += 1
         columnas = 0
 frame.pack(padx=30, pady=30)
-
 
 #Despues de añadir todos los elementos agrego el frame contenedor a la ventana
 frameContendor.pack(padx=20, pady=20) 

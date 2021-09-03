@@ -1,5 +1,6 @@
 import tweepy
 from NLP import *
+from ED import *
 
 class TweetsListener(tweepy.StreamListener):
 
@@ -7,9 +8,19 @@ class TweetsListener(tweepy.StreamListener):
         print("Estoy conectado!")
 
     def on_status(self, status):
-        text = NLP.translate(status)
-        lista = NLP.tokenizar(text)
-        NLP.stopWords(lista)
+        text = translate(status)
+        lista = tokenizar(text)
+        texto = stopWords(lista)
+        texto = eliminarAcentos(texto)
+        texto = eliminarCaracteres(texto)
+        
+        #texto = NLP.steamming(NLP.lematizar(texto))
+        texto = lematizar(steamming(texto))
+
+        print("\n")
+        analisisSentimientosNltk(texto)
+        analisisSentimientos(texto)
+        
         
     def on_error(self, status_code):
         print("Error", status_code)
@@ -23,10 +34,8 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
-
 stream = TweetsListener()
 streamingApi = tweepy.Stream(auth=api.auth, listener=stream)
 streamingApi.filter(
-    # follow=["151179935"],
     track=["Coronavirus", "Covid"]
 )
