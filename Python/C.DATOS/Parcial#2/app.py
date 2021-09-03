@@ -1,27 +1,13 @@
 import tweepy
-from NLP import *
-from ED import *
+from NLP import main
 
 class TweetsListener(tweepy.StreamListener):
-
     def on_connect(self):
         print("Estoy conectado!")
 
     def on_status(self, status):
-        text = translate(status)
-        lista = tokenizar(text)
-        texto = stopWords(lista)
-        texto = eliminarAcentos(texto)
-        texto = eliminarCaracteres(texto)
-        
-        #texto = NLP.steamming(NLP.lematizar(texto))
-        texto = lematizar(steamming(texto))
+        main(status)
 
-        print("\n")
-        analisisSentimientosNltk(texto)
-        analisisSentimientos(texto)
-        
-        
     def on_error(self, status_code):
         print("Error", status_code)
 

@@ -4,16 +4,26 @@ from nltk.corpus import stopwords
 import textblob.exceptions
 from textblob import Word
 from nltk.stem import SnowballStemmer
+from ED import *
 
-def translate(status):
+def main(status):
     try:
         valor = TextBlob(status.text)
         texto = valor.translate(to="es")
+        lista = tokenizar(texto)
+        texto = stopWords(lista)
+        texto = eliminarAcentos(texto)
+        texto = eliminarCaracteres(texto)
+        texto = manejoUrl(texto)
+        texto = steamming(lematizar(texto))
+        #texto = lematizar(steamming(texto))
+        print("\n")
+        analisisSentimientosNltk(texto)
+        analisisSentimientos(texto)
     except textblob.exceptions.TranslatorError:
-        texto = "ERROR"
+        print("ERROR")
     except textblob.exceptions.NotTranslated:
-        texto = "ERROR"
-    return texto
+        print("ERROR")
 
 def tokenizar(text):
     texto = sent_tokenize(str(text))
@@ -54,4 +64,15 @@ def lematizar(texto):
     text = ""
     for i in texto.split():
         text += Word(i).lemmatize() + " "
+    return text
+
+def manejoUrl(texto):
+    lista = texto.split()
+    text = ""
+    for i in range(len(lista)):
+        if len(lista[i])>3 and lista[i][0:4] == "http":
+            lista[i] = "*"
+    for j in lista:
+        if j != "*":
+            text += j + " "   
     return text
