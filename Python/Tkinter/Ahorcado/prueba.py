@@ -53,11 +53,11 @@ def click(event):
                 label["text"] = listaLineas
                 palabraAdivinar[palabraAdivinar.index(i)] = "*"
         if palabraAdivinar.count("*") == len(palabraAdivinar) :
-            MessageBox.showinfo("¡GANADOR!", "Has ganado la partida")
+            MessageBox.showinfo("¡GANADOR!", "Ha ganado la partida")
             ventana.destroy()
     else:
         if letraOprimida == " ":
-            MessageBox.showwarning("Alerta!", "Ya habias seleccionado la letra anteriormente")
+            MessageBox.showwarning("Alerta!", "Ya había seleccionado la letra anteriormente")
         else:
             MessageBox.showerror("Intento fallido", "La letra digitada no es correcta")
             restarIntentos() 
