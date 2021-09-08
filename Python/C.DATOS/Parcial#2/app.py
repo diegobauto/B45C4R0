@@ -6,7 +6,8 @@ class TweetsListener(tweepy.StreamListener):
         print("Estoy conectado!")
 
     def on_status(self, status):
-        main(status)
+        if(status.lang == "es"):
+            main(status)
 
     def on_error(self, status_code):
         print("Error", status_code)
